@@ -1,0 +1,49 @@
+
+<!DOCTYPE HTML>
+<head>	<title>Esercizio</title>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body >
+ 	<script>
+        "use strict";
+        function Media(x){
+            let m;
+            let sum=0;
+            let cont= x.lenght;
+            for(let i=0;i<cont;i++){
+                sum+=x[i];
+            };
+            m = sum/cont;
+            return m;
+        };
+    const stipendi = [500, 1000, 2370, 1140, 1500, 1750, 5000, 1220, 1600];
+    //es 1
+    const inc = stipendi.map(x=> {return x+((x/100)*10)});
+    console.log(inc);
+    //es 2
+    inc.forEach(e=>(e>1000)? console.log(e):false );
+   //es 3
+   let a=Media(inc)
+   console.log(a)
+    const UpMedia=inc.filter(e=> e > a);
+    console.log(UpMedia);
+   //es 4
+    const Sum=inc.reduce((accumulator,x)=>{
+        if (x%100==0){
+            let c= accumulator+x;
+            return c;}
+        else{
+            return accumulator;
+            }
+        },0);
+    console.log(Sum)
+	</script>
+</body>
+
+</html>
